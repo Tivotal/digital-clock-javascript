@@ -15,6 +15,12 @@ setInterval(() => {
   let hours = date.getHours();
   let mins = date.getMinutes();
 
+   if (hours >= 6 && hours < 18) {
+    icon.classList.replace("fa-moon", "fa-sun");
+  } else {
+    icon.classList.replace("fa-sun", "fa-moon");
+  }
+
   let label = hours < 12 ? "AM" : "PM";
 
   hours = hours > 12 ? hours - 12 : hours;
@@ -42,9 +48,4 @@ setInterval(() => {
 
   dateText.innerText = fullDate;
 
-  if (label === "AM") {
-    icon.classList.replace("fa-moon", "fa-sun");
-  } else {
-    icon.classList.replace("fa-sun", "fa-moon");
-  }
 }, 1000);
